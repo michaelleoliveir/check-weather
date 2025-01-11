@@ -1,0 +1,65 @@
+:root {
+    --lighterBlue: #d7effb; 
+    --lightBlue: #a3e2ff;
+    --darkBlue: #00509E
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--lighterBlue);
+}
+
+main {
+    position: relative;
+    background-color: var(--lightBlue);
+
+    width: 450px;
+    height: 110px;
+
+    border-radius: 20px;
+}
+
+.search-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+#icon {
+    color: var(--darkBlue);
+    font-size: 35px;
+}
+
+#inputText {
+    padding: 15px;
+    width: 60%;
+
+    border-radius: 10px;
+    border-style: none;
+}
+
+#searchButton {
+    padding: 11px;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background-color: var(--darkBlue);
+    border-style: none;
+}
+
+#search {
+    font-size: 20px;
+    color: var(--lightBlue);
+}
