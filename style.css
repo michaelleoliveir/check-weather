@@ -22,18 +22,45 @@ main {
     position: relative;
     background-color: var(--lightBlue);
 
-    width: 450px;
-    height: 110px;
-
     border-radius: 20px;
 }
 
-.search-box {
-    width: 100%;
+.search-box-error {
+    width: 450px;
+    height: 450px;
+
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 30px;
+    flex-direction: column;
+}
+
+.search-box-sucess {
+    width: 450px;
+    height: 450px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.search-box {
+    width: 450px;
+    height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#search-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    top: 30px; 
 }
 
 #icon {
@@ -43,7 +70,7 @@ main {
 
 #inputText {
     padding: 15px;
-    width: 60%;
+    width: 16rem;
 
     border-radius: 10px;
     border-style: none;
@@ -62,4 +89,14 @@ main {
 #search {
     font-size: 20px;
     color: var(--lightBlue);
+}
+
+#weather-condition{
+    width: 200px;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

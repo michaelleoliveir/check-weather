@@ -10,12 +10,35 @@
 </head>
 <body>
     <main class="container">
-        <div class="search-box">
-            <i class="ri-map-pin-line" id="icon"></i>
-            <input type="text" id="inputText" autocomplete="off">
-            <button id="searchButton">
-                <i class="ri-search-2-line" id="search"></i>
-            </button>
+        <div class="search-box-sucess">
+            <div id="search-bar">
+                <i class="ri-map-pin-line" id="icon"></i>
+                <input type="text" id="inputText" autocomplete="off">
+                <button id="searchButton">
+                    <i class="ri-search-2-line" id="search"></i>
+                </button>
+            </div>
+
+            <div class="image">
+                <img src="./images/404.png" alt="Error" id="image-error" style="display: none;">
+            </div>
+
+            <div class="image-weather">
+                <img src="/images/clear.png" alt="" id="weather-condition">
+            </div>
+
+            <div class="weather-details">
+                <div id="weather-temp">
+                    <i class="ri-temp-cold-line"></i>
+                    <span>30</span>
+                    <p>Temperature</p>
+                </div>
+                <div id="weather-humidity">
+                    <i class="ri-drop-line"></i>
+                    <span>30</span>
+                    <p>Humidy</p>
+                </div>
+            </div>
         </div>
     </main>
     
