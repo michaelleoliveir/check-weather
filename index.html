@@ -9,34 +9,47 @@
     <title>Check Weather</title>
 </head>
 <body>
+    <header>
+        <div class="title">
+            <p id="check">Let's check the</p>
+            <span id="dif-font">weather...</span>
+        </div>
+
+        <p id="content">Write in the input down below your country's name and check its temperate and humidity</p>
+    </header>
+
     <main class="container">
         <div class="search-box">
             <div id="search-bar">
-                <i class="ri-map-pin-line" id="icon"></i>
-                <input type="text" id="inputText" autocomplete="off">
+                <i class="ri-map-pin-line" id="location"></i>
+                <input type="text" id="inputText" autocomplete="off" oninput="this.value = this.value.toUpperCase()" style="font-size: 17px;">
                 <button id="searchButton">
                     <i class="ri-search-2-line" id="search"></i>
                 </button>
             </div>
 
+            <div class="loading-text" style="display: none;"></div>
+
             <div class="image">
                 <img src="./images/404.png" alt="Error" id="image-error" style="display: none;">
             </div>
 
-            <div class="image-weather">
-                <img src="" alt="" id="weather-condition" style="display: none;">
-            </div>
-
             <div class="weather-details" style="display: none;">
-                <div id="weather-temp">
-                    <i class="ri-temp-cold-line icon"></i>
-                    <span>30</span>
-                    <p>Temperature</p>
+                <div class="image-weather">
+                    <img src="" alt="" id="weather-condition">
                 </div>
-                <div id="weather-humidity">
-                    <i class="ri-drop-line icon"></i>
-                    <span>30</span>
-                    <p>Humidy</p>
+
+                <div class="weather-info">
+                    <div id="weather-temp">
+                        <i class="ri-temp-cold-line icon"></i>
+                        <span id="temp-num"></span>
+                        <p>Temperature</p>
+                    </div>
+                    <div id="weather-humidity">
+                        <i class="ri-drop-line icon"></i>
+                        <span id="hum-num"></span>
+                        <p>Humidy</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/lexend');
 
 :root {
-    --lighterBlue: #d7effb; 
+    --lighterBlue: #d7effb;
     --lightBlue: #a3e2ff;
     --darkBlue: #00509f
 }
@@ -12,44 +12,96 @@
     font-family: 'Lexend', sans-serif;
 }
 
-body{
+body {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    flex-direction: column;
     background-color: var(--lighterBlue);
+}
+
+header, .title {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    margin: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.title {
+    text-align: center;
+    gap: -10px;
+    margin-bottom: 3rem;
+}
+
+#check{
+    font-weight: lighter;
+    font-size: 2rem;
+    color: var(--darkBlue);
+    margin-left: -10rem;
+}
+
+.title p, #dif-font {
+    line-height: 0.7;
+}
+
+#dif-font {
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 4.5rem;
+    margin-right: -10rem;
+    color: rgb(6, 6, 91);
+}
+
+#content {
+    font-size: 1rem;
+    width: 25rem;
+    text-align: center;
 }
 
 main {
     position: relative;
     background-color: var(--lightBlue);
-
-    border-radius: 20px;
+    border-radius: 2.4rem;
 }
 
-.search-box-expand {
-    width: 430px;
-    height: 410px;
-
+.search-box, .search-box-expand, .search-box-loading {
     display: flex;
     align-items: center;
+    border-radius: 2.4rem;
+}
+
+.search-box-expand, .search-box-loading {
+    width: 430px;
+    height: 410px;
+}
+
+/* search-box tamanho grande */
+.search-box-expand {
     justify-content: center;
 }
 
+/* search-box tamanho pequeno */
 .search-box {
     width: 450px;
     height: 120px;
-
-    display: flex;
-    align-items: center;
     justify-content: space-between;
     flex-direction: column;
 }
 
-#image-error{
+.search-box-loading {
+    flex-direction: column;
+    justify-content: center;
+}
+
+#image-error {
     width: 300px;
-    margin-top: 35px;
+    margin-top: 3.5rem;
 }
 
 #search-bar {
@@ -58,20 +110,18 @@ main {
     position: absolute;
 
     top: 30px;
-    gap: 17px; 
+    gap: 17px;
 }
 
-#icon {
+/* ícones */
+#location {
     color: var(--darkBlue);
     font-size: 35px;
 }
 
-#inputText {
-    padding: 15px;
-    width: 16rem;
-
-    border-radius: 10px;
-    border-style: none;
+#search {
+    font-size: 20px;
+    color: var(--lightBlue);
 }
 
 #searchButton {
@@ -84,28 +134,37 @@ main {
     border-style: none;
 }
 
-#search {
-    font-size: 20px;
-    color: var(--lightBlue);
+#inputText {
+    padding: 1rem;
+    width: 16rem;
+
+    border-radius: 10px;
+    border-style: none;
 }
 
 .image-weather {
-    margin-top: 50px;
+    text-align: center;
 }
 
-#weather-condition{
+#weather-condition {
     width: 200px;
+    margin-top: 1.5rem;
 }
 
 .weather-details {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 80px;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
-#weather-temp, #weather-humidity {
+.weather-info {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1.6rem;
+    gap: 60px;
+}
+
+#weather-temp,
+#weather-humidity {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -116,26 +175,51 @@ main {
     color: var(--darkBlue);
 }
 
-.search-box-loading {
-    width: 430px;
-    height: 410px;
+/* animação do loading data */
+@keyframes bounce {
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    0%,
+    100% {
+        transform: translateY(0);
+    }
 
-    background-color: var(--lightBlue);
-    border-radius: 20px;
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
-.search-box-loading > * {
-    display: none;
-}
-
-.search-box-loading::after {
-    content: "Loading data...";
+.loading-text span {
+    display: inline-block;
     font-size: 20px;
     font-weight: bold;
     color: var(--darkBlue);
+    animation: bounce 2s ease-in-out infinite;
+    padding: 1px;
+}
+
+.loading-text span {
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+@media (max-width: 430px) {
+    .search-box, .search-box-expand, .search-box-loading {
+        width: 20.5rem;
+    }
+
+    #inputText {
+        width: 10rem;
+        font-size: 14px !important;
+    }
+
+    #search-bar {
+        gap: 0.8rem;
+    }
+
+    #weather-condition {
+        width: 10rem;
+    }
+
+    #image-error {
+        width: 15rem;
+    }
 }
