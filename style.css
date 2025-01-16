@@ -4,8 +4,8 @@
     --lighterBlue: #d7effb;
     --lightBlue: #a3e2ff;
     --darkBlue: #00509f;
-    --a: -45deg;
-    --t: .23em; 
+    --a: -35deg;
+    --t: .2em; 
 }
 
 * {
@@ -31,7 +31,7 @@ header,
 }
 
 header {
-    margin: 2rem;
+    margin: 2.5rem;
     justify-content: center;
     align-items: center;
     width: 60%;
@@ -40,7 +40,7 @@ header {
 .title {
     text-align: center;
     gap: -10px;
-    margin-bottom: 2.4rem;
+    margin-bottom: 1.5rem;
 }
 
 #check {
@@ -66,7 +66,7 @@ header {
     --_s: calc(var(--t)*cos(var(--a)));
     background:
         linear-gradient(var(--a), #0000 var(--_s), currentColor 0 calc(100% - var(--_s)), #0000 0) bottom/var(--i, 85%) var(--t) no-repeat;
-    padding: 0 .2em calc(var(--t) + .1em);
+    padding: 0 .5em calc(var(--t) + .1em);
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
 }
@@ -201,6 +201,11 @@ main {
     color: var(--darkBlue);
 }
 
+#info, #hum-num, #temp-num {
+    color: #0b3d6e;
+    text-shadow: 1px -1px 15px var(--lighterBlue);
+}
+
 /* animação do loading data */
 @keyframes bounce {
 
@@ -250,5 +255,26 @@ main {
 
     #image-error {
         width: 15rem;
+    }
+
+    #check {
+        font-weight: lighter;
+        font-size: 1.3rem;
+        color: var(--darkBlue);
+        margin-left: -9.5rem;
+    }
+
+    #dif-font {
+        font-style: italic;
+        font-weight: bolder;
+        font-size: 3.1rem;
+        margin-right: -6rem;
+    }
+
+    #content {
+        font-size: 0.8rem;
+        width: 20rem;
+        text-align: center;
+        color: var(--darkBlue);
     }
 }
