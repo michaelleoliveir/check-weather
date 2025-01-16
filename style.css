@@ -3,7 +3,9 @@
 :root {
     --lighterBlue: #d7effb;
     --lightBlue: #a3e2ff;
-    --darkBlue: #00509f
+    --darkBlue: #00509f;
+    --a: -45deg;
+    --t: .23em; 
 }
 
 * {
@@ -18,16 +20,18 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: var(--lighterBlue);
+    background: rgb(215, 239, 251);
+    background: radial-gradient(circle, rgba(215, 239, 251, 0.773) 0%, rgba(93, 190, 235, 0.808) 81%);
 }
 
-header, .title {
+header,
+.title {
     display: flex;
     flex-direction: column;
 }
 
 header {
-    margin: 1.5rem;
+    margin: 2rem;
     justify-content: center;
     align-items: center;
     width: 60%;
@@ -36,17 +40,18 @@ header {
 .title {
     text-align: center;
     gap: -10px;
-    margin-bottom: 3rem;
+    margin-bottom: 2.4rem;
 }
 
-#check{
+#check {
     font-weight: lighter;
     font-size: 2rem;
     color: var(--darkBlue);
     margin-left: -10rem;
 }
 
-.title p, #dif-font {
+.title p,
+#dif-font {
     line-height: 0.7;
 }
 
@@ -55,6 +60,23 @@ header {
     font-weight: bolder;
     font-size: 4.5rem;
     margin-right: -10rem;
+}
+
+#detail {
+    --_s: calc(var(--t)*cos(var(--a)));
+    background:
+        linear-gradient(var(--a), #0000 var(--_s), currentColor 0 calc(100% - var(--_s)), #0000 0) bottom/var(--i, 85%) var(--t) no-repeat;
+    padding: 0 .2em calc(var(--t) + .1em);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+#detail:hover {
+    --i: 100%;
+}
+
+#dif-font,
+#detail {
     color: rgb(6, 6, 91);
 }
 
@@ -62,21 +84,25 @@ header {
     font-size: 1rem;
     width: 25rem;
     text-align: center;
+    color: var(--darkBlue);
 }
 
 main {
     position: relative;
-    background-color: var(--lightBlue);
+    background-color: #63bae3;
     border-radius: 2.4rem;
 }
 
-.search-box, .search-box-expand, .search-box-loading {
+.search-box,
+.search-box-expand,
+.search-box-loading {
     display: flex;
     align-items: center;
     border-radius: 2.4rem;
 }
 
-.search-box-expand, .search-box-loading {
+.search-box-expand,
+.search-box-loading {
     width: 430px;
     height: 410px;
 }
@@ -202,7 +228,10 @@ main {
 }
 
 @media (max-width: 430px) {
-    .search-box, .search-box-expand, .search-box-loading {
+
+    .search-box,
+    .search-box-expand,
+    .search-box-loading {
         width: 20.5rem;
     }
 

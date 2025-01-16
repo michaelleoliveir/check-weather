@@ -4,6 +4,7 @@ const weatherDetails = document.querySelector(".weather-details");
 const errorImage = document.querySelector("#image-error");
 const weatherImage = document.querySelector("#weather-condition");
 const loading = document.querySelector(".loading-text");
+const header = document.querySelector(".header")
 
 botao.addEventListener("click", () => {
     pegarDados();
@@ -13,10 +14,11 @@ async function pegarDados() {
     const cidade = document.querySelector("#inputText").value;
 
     weatherDetails.style.display = "none"
-    weatherBox.classList.remove("search-box-expand", "search-box-error");
+    weatherBox.classList.remove("search-box-expand", "search-box-error", "search-box");
     weatherBox.classList.add("search-box-loading");
     loading.style.display = "block";
     errorImage.style.display = "none";
+    header.style.display = "none"
 
     try {
         const resposta = await fetch(
